@@ -1,5 +1,5 @@
 # ESP8266
-send sensor values from arduino via WiFi to mysql database and/or display on webpage
+send sensor values from arduino via WiFi to mysql database and display on webpage
 
 First of all you need to set up your components just like the schematics below: <br><br><br>
 <img src="examples/arduino_ESP.png" alt="schematics" width="auto" height="300"><br>

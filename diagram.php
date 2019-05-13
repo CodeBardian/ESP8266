@@ -2,7 +2,7 @@
     $servername = "localhost";  
     $dbusername = "username";  //change to your mysql username
     $dbpassword = "password";  //change to your mysql password
-    $dbname = "sensor_data"; 
+    $dbname = "name";          //change to your database name
 
     $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
     if ($conn->connect_error) {

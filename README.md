@@ -17,5 +17,6 @@ In order to make it work you will first need to create a table in your mysql dat
       )
    </code>
 </pre>
+Additionally you'll need to download chart.js from https://www.chartjs.org/ to correctly display the diagrams.<br>
 Note: The sketch will only work if you have already connected your ESP to a network before and
       saved configuration to flash. 

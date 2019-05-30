@@ -11,7 +11,7 @@ DHT dht(DHTPIN, DHTTYPE);
 
 String website ="example.net"  // change to your host website
 String url ="example.php"      // change to url which processes get-request
-int sleepTime = 2 ;  // defines the pause time between sending
+int sleepTime = 2 ;  // defines the pause time between sending in minutes
 
 String temperature="";
 String humidity="";
@@ -26,7 +26,7 @@ void loop () {
   temperature = String(dht.readTemperature());
   humidity = String(dht.readHumidity());
   httppost();
-  for(int i = 0; i<(sleepTime ;i++){     
+  for(int i = 0; i<(sleepTime*60)/8; i++){     
     LowPower.powerDown(SLEEP_8S, ADC_OFF, BOD_OFF); 
   }
 }

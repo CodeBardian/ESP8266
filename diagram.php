@@ -9,17 +9,11 @@
         die("Connection failed: " . $conn->connect_error);
     }
     
-    $sql = "SELECT * FROM sensor_data ORDER BY id DESC LIMIT 0, 1 ";
-    $test = $conn->query($sql);
-    $highestSet = $test->fetch_assoc();
-    $to_id = $highestSet['id'];
-    $from_id = $to_id-12;
     $cnt=0;
     $value = array();
     $time = array();
 
-
-    $sql = "SELECT * FROM sensor_data WHERE id BETWEEN '" . $from_id . "' AND ( SELECT MAX(id) FROM sensor_data ) ";
+    $sql = "SELECT * FROM sensor_data WHERE id BETWEEN ( SELECT MAX(id) FROM sensor_data )-12 AND  ( SELECT MAX(id) FROM sensor_data )";
     $result = $conn->query($sql);
 
     if ($result->num_rows==0){
